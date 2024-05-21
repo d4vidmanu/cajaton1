@@ -1,13 +1,14 @@
 package domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Entity
+import java.util.Set;
+
 @Data
+@Entity
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,4 +17,7 @@ public class Usuario {
     private String correoElectronico;
     private String contraseña;
     private String telefono;
+
+
+    // Constructores, getters y setters
 }

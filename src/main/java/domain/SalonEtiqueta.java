@@ -1,17 +1,20 @@
 package domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
-@Entity
+import java.io.Serializable;
+
 @Data
+@Entity
 public class SalonEtiqueta {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long idSalon;
-    private Long idEtiqueta;
+
+    @ManyToOne
+    private Salon salon;
+
+    @ManyToOne
+    private Etiqueta etiqueta;
+
 }

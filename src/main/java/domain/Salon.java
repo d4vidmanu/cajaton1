@@ -1,19 +1,21 @@
 package domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
-@Entity
+import java.util.Set;
+import java.time.LocalDateTime;
+
+import java.util.Set;
+
 @Data
+@Entity
 public class Salon {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idSalon;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String nombre;
     private String ubicacion;
     private int capacidad;
     private String descripcion;
+    // Getters and Setters
 }
