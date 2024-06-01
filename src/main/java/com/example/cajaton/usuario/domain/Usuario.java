@@ -2,6 +2,8 @@ package com.example.cajaton.usuario.domain;
 
 import com.example.cajaton.cancion.domain.Cancion;
 import com.example.cajaton.listareproduccion.domain.ListaReproduccion;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.Data;
@@ -11,6 +13,7 @@ import java.util.List;
 
 @Entity
 @Data
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id", scope = Usuario.class)
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +30,7 @@ public class Usuario {
     private LocalDate fechaDeRegistro;
 
     @OneToMany
-    private List<Cancion> cancion;
+    private List<Cancion> canciones;
 
     @OneToMany
     private List<ListaReproduccion> listaReproduccion;
