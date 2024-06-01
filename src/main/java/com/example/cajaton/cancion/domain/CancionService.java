@@ -1,6 +1,5 @@
 package com.example.cajaton.cancion.domain;
 
-import com.example.cajaton.cancion.domain.Cancion;
 import com.example.cajaton.cancion.infrastructure.CancionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,7 +33,7 @@ public class CancionService {
         return cancionRepository.findById(id).map(cancion -> {
             cancion.setTitulo(cancionDetails.getTitulo());
             cancion.setDuracion(cancionDetails.getDuracion());
-            cancion.setArtistaID(cancionDetails.getArtistaID());
+            cancion.setArtistaID(cancionDetails.getArtistaID());  // Uso correcto del método getArtistaID
             cancion.setIdAlbum(cancionDetails.getIdAlbum());
             cancion.setIdListaReproduccion(cancionDetails.getIdListaReproduccion());
             return cancionRepository.save(cancion);
