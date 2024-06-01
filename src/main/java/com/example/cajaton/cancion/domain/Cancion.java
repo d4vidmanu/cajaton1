@@ -8,8 +8,6 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.Data;
 
-
-
 @Entity
 @Table(name = "canciones")
 @Data
@@ -26,7 +24,7 @@ public class Cancion {
 
     @ManyToOne
     @JoinColumn(name = "artistaID")
-    private Artista artistaID;
+    private Artista artista;
 
     @ManyToOne
     @JoinColumn(name = "album")
@@ -36,4 +34,3 @@ public class Cancion {
     @JoinColumn(name = "ListaDeReproduccion")
     private ListaReproduccion idListaReproduccion;
 }
-
