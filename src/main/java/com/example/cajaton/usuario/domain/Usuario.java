@@ -19,8 +19,14 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idUser;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role", nullable = false)
+    private Role role;  // Asegúrate de usar el enum correcto
+
     @Column(nullable = false)
     private String nombre;
+
+    private String contrasena;
 
     @Email
     @Column(nullable = false)
