@@ -22,6 +22,6 @@ public class Album extends Usuario {
 
     private LocalDate fechaDeLanzamiento;
 
-    @OneToMany
+    @OneToMany(mappedBy = "idAlbum")
     private List<Cancion> canciones;
 }

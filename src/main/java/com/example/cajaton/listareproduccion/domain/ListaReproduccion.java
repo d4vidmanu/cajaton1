@@ -6,14 +6,13 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.Data;
-import org.hibernate.annotations.CollectionId;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Entity
 @Data
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id", scope = ListaReproduccion.class)
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "idPlaylist", scope = ListaReproduccion.class)
 public class ListaReproduccion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +26,6 @@ public class ListaReproduccion {
 
     private LocalDate fechaDeCreacion;
 
-    @OneToMany
+    @OneToMany(mappedBy = "idListaReproduccion")
     private List<Cancion> canciones;
 }

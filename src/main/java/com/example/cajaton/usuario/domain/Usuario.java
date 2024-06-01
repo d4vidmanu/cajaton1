@@ -13,7 +13,7 @@ import java.util.List;
 
 @Entity
 @Data
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id", scope = Usuario.class)
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "idUser", scope = Usuario.class)
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,9 +29,9 @@ public class Usuario {
     @Column(nullable = false)
     private LocalDate fechaDeRegistro;
 
-    @OneToMany
+    @OneToMany(mappedBy = "usuario")
     private List<Cancion> canciones;
 
-    @OneToMany
+    @OneToMany(mappedBy = "usuario")
     private List<ListaReproduccion> listaReproduccion;
 }
