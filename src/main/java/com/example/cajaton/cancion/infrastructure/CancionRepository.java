@@ -1,4 +1,7 @@
 package com.example.cajaton.cancion.infrastructure;
 
-public interface CancionRepository {
+import com.example.cajaton.cancion.domain.Cancion;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CancionRepository extends JpaRepository<Cancion, Integer> {
 }

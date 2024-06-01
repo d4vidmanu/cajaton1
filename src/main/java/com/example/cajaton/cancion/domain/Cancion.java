@@ -24,7 +24,7 @@ public class Cancion {
 
     @ManyToOne
     @JoinColumn(name = "artistaID")
-    private Artista artista;
+    private Artista artistaID;
 
     @ManyToOne
     @JoinColumn(name = "album")
