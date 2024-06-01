@@ -6,7 +6,6 @@ import com.example.cajaton.listareproduccion.domain.ListaReproduccion;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.List;
 
 
 @Entity
