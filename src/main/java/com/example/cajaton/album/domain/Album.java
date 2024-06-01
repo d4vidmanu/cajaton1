@@ -17,7 +17,7 @@ public class Album extends Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idAlbum;
-
+//hola
     private String nombre;
 
     private LocalDate fechaDeLanzamiento;
