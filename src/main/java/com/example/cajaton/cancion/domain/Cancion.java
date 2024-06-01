@@ -3,6 +3,8 @@ package com.example.cajaton.cancion.domain;
 import com.example.cajaton.album.domain.Album;
 import com.example.cajaton.artista.domain.Artista;
 import com.example.cajaton.listareproduccion.domain.ListaReproduccion;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -11,6 +13,7 @@ import lombok.Data;
 @Entity
 @Table(name = "canciones")
 @Data
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id", scope = Cancion.class)
 public class Cancion {
 
     @Id
